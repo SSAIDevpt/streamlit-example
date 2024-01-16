@@ -2,6 +2,7 @@ import altair as alt
 import numpy as np
 import pandas as pd
 import streamlit as st
+import tkinter as tk
 
 """
 # Welcome to Streamlit!
@@ -38,3 +39,19 @@ st.altair_chart(alt.Chart(df, height=700, width=700)
         color=alt.Color("idx", legend=None, scale=alt.Scale()),
         size=alt.Size("rand", legend=None, scale=alt.Scale(range=[1, 150])),
     ))
+
+def on_button_click():
+    print("Button clicked!")
+
+# Create the main window
+window = tk.Tk()
+
+# Create a button and attach a function to it
+button = tk.Button(window, text="Click Me!", command=on_button_click)
+
+# Pack the button into the window
+button.pack()
+
+# Start the Tkinter event loop
+window.mainloop()
+
